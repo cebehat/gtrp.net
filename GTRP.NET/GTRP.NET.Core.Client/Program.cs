@@ -28,6 +28,7 @@ namespace GTRP.NET.Core.Client
                 ChatHelper.ErrorMessage("ERROR", "This is an error test from client");
             }), false);
 
+            
             RegisterCommand("warning", new Action<int, List<object>, string>((source, args, raw) =>
             {
                 ChatHelper.WarningMessage("WARNING", "This is a warning test from client");

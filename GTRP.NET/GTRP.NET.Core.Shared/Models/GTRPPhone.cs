@@ -22,7 +22,7 @@ namespace GTRP.NET.Shared.Models
         {
             public int Id { get; set; }
             public string Name { get; set; }
-            public int Number { get; set; }            
+            public int Phonenumber { get; set; }
         }
     }
 }

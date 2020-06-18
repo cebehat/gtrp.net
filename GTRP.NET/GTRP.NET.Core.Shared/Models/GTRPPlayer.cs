@@ -8,14 +8,24 @@ namespace GTRP.NET.Shared.Models
 {
     public class GTRPPlayer
     {
+        //System based properties for players
         public int PlayerId { get; set; }
         public string SteamId { get; private set; }
         public bool IsBanned { get; set; }
         public string BanReason { get; set; }
+        public bool IsCharacterKilled { get; set; }
 
+
+        //RP/Ingame based properties for players
+
+        /// <summary>
+        /// GovernmentID is a string representation of the RP id for a character
+        /// this could for example be the social security number on american based servers.
+        /// </summary>
+        public string GovernmentID { get; set; }
         public bool HasPhone => Mobilephone != null;
         public GTRPPhone Mobilephone { get; set; }
-
+        
         public int MyProperty { get; set; }
 
     }
