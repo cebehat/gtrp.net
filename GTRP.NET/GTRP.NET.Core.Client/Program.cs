@@ -16,6 +16,7 @@ namespace GTRP.NET.Core.Client
 
         private void OnClientResourceStart(string resourceName)
         {
+            
             if (GetCurrentResourceName() != resourceName) return;
 
             RegisterCommand("test", new Action<int, List<object>, string>((source, args, raw) =>

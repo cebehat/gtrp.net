@@ -9,11 +9,17 @@ namespace GTRP.NET.Shared.Models
     public class GTRPPlayer
     {
         //System based properties for players
-        public int PlayerId { get; set; }
+        public int PlayerId { get; private set; }
         public string SteamId { get; private set; }
         public bool IsBanned { get; set; }
         public string BanReason { get; set; }
         public bool IsCharacterKilled { get; set; }
+        
+        public GTRPPlayer(int playerID, string steamId)
+        {
+            this.PlayerId = playerID;
+            this.SteamId = steamId;
+        }
 
 
         //RP/Ingame based properties for players
