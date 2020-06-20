@@ -52,4 +52,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy /Y "$(TargetDir)/*.dll" "H:\FiveM\testserver\vrp2-server-data\resources\[GTRP.NET]\GTRP.NET_Core\Client\"</PostBuildEvent>
+  </PropertyGroup>
 </Project>

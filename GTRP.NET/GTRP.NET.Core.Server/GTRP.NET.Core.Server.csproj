@@ -34,6 +34,9 @@
     <Reference Include="CitizenFX.Core.Server, Version=0.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <HintPath>..\packages\CitizenFX.Core.Server.1.0.2625\lib\net45\CitizenFX.Core.Server.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -57,4 +60,8 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy /Y "$(TargetDir)/*.dll" "H:\FiveM\testserver\vrp2-server-data\resources\[GTRP.NET]\GTRP.NET_Core\Server\"
+copy /Y "$(TargetDir)/*.pdb" "H:\FiveM\testserver\vrp2-server-data\resources\[GTRP.NET]\GTRP.NET_Core\Server\"</PostBuildEvent>
+  </PropertyGroup>
 </Project>

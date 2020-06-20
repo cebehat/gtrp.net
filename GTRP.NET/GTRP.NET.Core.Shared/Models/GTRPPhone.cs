@@ -7,7 +7,7 @@ namespace GTRP.NET.Shared.Models
         public PhoneType GetPhoneType { get; }
         public int PhoneNumber { get; set; }
         private int _secondPhoneNumber;
-        public int? SecondaryPhoneNumber { get { return IsDualSim ? _secondPhoneNumber : new int?  } set { _secondPhoneNumber = value.HasValue ? value.Value : 0 } }
+        public int? SecondaryPhoneNumber { get { return IsDualSim ? _secondPhoneNumber : new int?();  } set { _secondPhoneNumber = value.HasValue ? value.Value : 0; } }
         public List<GTRPPhoneContact> Contacts { get; }
         public bool IsDualSim { get; set; }
 
