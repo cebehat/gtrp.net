@@ -8,13 +8,6 @@ namespace GTRP.NET.Shared.Models
 {
     public class GTRPUser
     {
-        private int id;
-        private string steam_id;
-        private int banned;
-        private string ban_reason;
-        private string discord_id;
-        private string last_used_ip;
-        private int whitelisted;
 
         //System based properties for players
         public int PlayerId { get; private set; }

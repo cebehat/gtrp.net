@@ -21,6 +21,11 @@ namespace GTRP.NET.Core.Server
         private void OnServerResourceStart(string resourceName)
         {
             if (resourceName != "GTRP.NET_Core") return;
+            Console.Out.WriteLine("Test");
+            DynamicObject spawnManager = Exports["spawnmanager"];
+            
+            ((DynamicObject)Exports["spawnmanager"]).GetDynamicMemberNames().ToList().ForEach(x=> Console.Out.WriteLine(x));
+            Console.Out.WriteLine("Test2");
             EventHandlers["playerConnecting"] += new Action<Player, string, CallbackDelegate, dynamic>(OnPlayerConnecting);
         }
 

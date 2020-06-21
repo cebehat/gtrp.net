@@ -57,6 +57,7 @@
     <ProjectReference Include="..\GTRP.NET.Core.Shared\GTRP.NET.Shared.csproj">
       <Project>{B5F627BC-46EF-4833-8C2A-2F31B200BE99}</Project>
       <Name>GTRP.NET.Shared</Name>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
