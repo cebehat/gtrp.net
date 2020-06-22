@@ -7,7 +7,7 @@ using CitizenFX.Core;
 using static CitizenFX.Core.Native.API;
 
 
-namespace GTRP.NET.Systems.Characters.Client
+namespace GTRP.NET.Core.Client.Systems
 {
 
     public interface ICharacterBuilder

@@ -6,10 +6,10 @@ using static CitizenFX.Core.Native.API;
 
 namespace GTRP.NET.Core.Client
 {
-    public class Program : BaseScript
+    public class UserHandler : BaseScript
     {
 
-        public Program()
+        public UserHandler()
         {
             EventHandlers["onClientResourceStart"] += new Action<string>(OnClientResourceStart);
         }
@@ -18,6 +18,8 @@ namespace GTRP.NET.Core.Client
         {
             
             if (GetCurrentResourceName() != resourceName) return;
+
+            
 
             RegisterCommand("test", new Action<int, List<object>, string>((source, args, raw) =>
             {

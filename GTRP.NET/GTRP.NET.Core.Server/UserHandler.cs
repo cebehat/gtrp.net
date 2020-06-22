@@ -10,9 +10,9 @@ using static CitizenFX.Core.Native.API;
 
 namespace GTRP.NET.Core.Server
 {
-    public class Program : BaseScript
+    public class UserHandler : BaseScript
     {
-        public Program()
+        public UserHandler()
         {
             EventHandlers["onServerResourceStart"] += new Action<string>(OnServerResourceStart);
             
@@ -23,7 +23,9 @@ namespace GTRP.NET.Core.Server
             if (resourceName != "GTRP.NET_Core") return;
             Console.Out.WriteLine("Test");
             DynamicObject spawnManager = Exports["spawnmanager"];
-            
+
+            Exports["spawnmanager"].setAutoSpawn(false);
+
             ((DynamicObject)Exports["spawnmanager"]).GetDynamicMemberNames().ToList().ForEach(x=> Console.Out.WriteLine(x));
             Console.Out.WriteLine("Test2");
             EventHandlers["playerConnecting"] += new Action<Player, string, CallbackDelegate, dynamic>(OnPlayerConnecting);
@@ -44,7 +46,7 @@ namespace GTRP.NET.Core.Server
                 return;
             }
 
-
+            
             var result = (List<object>)await Exports["ghmattimysql"].executeSync($"SELECT * FROM gtrp.users users WHERE users.steam_id = '{steamid}'");
 
 
